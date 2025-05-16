@@ -1,38 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Firebase Web App - Login</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase Web App - Login & Register</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-100 flex items-center justify-center h-screen">
-  <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-sm">
-  <!-- Login Form -->
-  <form id="loginForm">
-    <h2 class="text-2xl font-bold mb-6 text-center">Login</h2>
-    <input type="email" id="loginEmail" placeholder="Email" class="border p-2 mb-4 w-full" required />
-    <input type="password" id="loginPassword" placeholder="Password" class="border p-2 mb-4 w-full" required />
-    <button type="submit" class="bg-blue-500 text-white py-2 px-4 w-full rounded">Login</button>
-    <p class="text-center mt-4 text-red-600" id="loginError"></p>
-    <p class="text-center mt-4">
-      Don't have an account? <a href="#" id="showRegister" class="text-blue-500">Register here</a>
-    </p>
-  </form>
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-sm">
+        <!-- Login Form -->
+        <form id="loginForm">
+            <h2 class="text-2xl font-bold mb-6 text-center">Login</h2>
+            <input type="email" id="loginEmail" placeholder="Email" class="border p-2 mb-4 w-full" required>
+            <input type="password" id="loginPassword" placeholder="Password" class="border p-2 mb-4 w-full" required>
+            <button type="submit" class="bg-blue-500 text-white py-2 px-4 w-full rounded">Login</button>
+            <p class="text-center mt-4 text-red-600" id="loginError"></p>
+            <p class="text-center mt-4">
+                Don't have an account? <a href="#" id="showRegister" class="text-blue-500">Register here</a>
+            </p>
+        </form>
 
-  <!-- Register Form (hidden initially) -->
-  <form id="registerForm" style="display:none;">
-    <h2 class="text-2xl font-bold mb-6 text-center">Register</h2>
-    <input type="email" id="registerEmail" placeholder="Email" class="border p-2 mb-4 w-full" required />
-    <input type="password" id="registerPassword" placeholder="Password" class="border p-2 mb-4 w-full" required />
-    <button type="submit" class="bg-green-500 text-white py-2 px-4 w-full rounded">Register</button>
-    <p class="text-center mt-4 text-red-600" id="registerError"></p>
-    <p class="text-center mt-4">
-      Already have an account? <a href="#" id="showLogin" class="text-blue-500">Login here</a>
-    </p>
-  </form>
-</div>
+        <!-- Register Form -->
+        <form id="registerForm" style="display: none;">
+            <h2 class="text-2xl font-bold mb-6 text-center">Register</h2>
+            <input type="email" id="registerEmail" placeholder="Email" class="border p-2 mb-4 w-full" required>
+            <input type="password" id="registerPassword" placeholder="Password" class="border p-2 mb-4 w-full" required>
+            <button type="submit" class="bg-green-500 text-white py-2 px-4 w-full rounded">Register</button>
+            <p class="text-center mt-4 text-red-600" id="registerError"></p>
+            <p class="text-center mt-4">
+                Already have an account? <a href="#" id="showLogin" class="text-blue-500">Login here</a>
+            </p>
+        </form>
+    </div>
 
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js"></script>
+
+    <!-- Config and App Scripts -->
+    <script src="firebase-config.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
